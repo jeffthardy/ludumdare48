@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1608947029905392023}
   - component: {fileID: 1608947029905392020}
   m_Layer: 0
-  m_Name: WormMask
+  m_Name: CameraMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1608947029905392022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 7.62547}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,7 +77,7 @@ SpriteMask:
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
   m_BackSortingLayer: 0
-  m_FrontSortingOrder: 5
-  m_BackSortingOrder: 0
+  m_FrontSortingOrder: 99
+  m_BackSortingOrder: 5
   m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0

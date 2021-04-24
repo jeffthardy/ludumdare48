@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public float zoomLevel = 10;
 
     public float cameraDistance = 2.0f;
+    public float mouseWheelMult = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,26 @@ public class CameraController : MonoBehaviour
             transform.position = new Vector3(adjustment.x, adjustment.y, -10);
         }
 
+
+
+        float ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
+        if (ScrollWheelChange != 0)
+        {
+            //Debug.Log("Wheel changed by " + ScrollWheelChange);
+            ChangeZoom(zoomLevel - ScrollWheelChange* mouseWheelMult);
+
+        }
+
+
     }
 
-    void ChangeZoom(int newZoom)
+    void ChangeZoom(float newZoom)
     {
+        // Allow zoom within a set range
+        if (newZoom > 70)
+            newZoom = 70;
+        if (newZoom < 5)
+            newZoom = 5;
         zoomLevel = newZoom;
         GetComponent<Camera>().orthographicSize = zoomLevel;
 
