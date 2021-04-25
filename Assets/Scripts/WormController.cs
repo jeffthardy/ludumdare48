@@ -12,6 +12,7 @@ public class WormController : MonoBehaviour
     public GameObject WormMaskHolder;
     public float maxSegDistance = 1.0f;
     public float shiftMultiplier = 2.0f;
+    public float gravityValue = -9.81f;
 
     Rigidbody2D rigidbody2d;
     float horizontal;
@@ -22,6 +23,7 @@ public class WormController : MonoBehaviour
     private int maxWormParts=10;
     private int maxWormMasks = 1000;
     private int wormMaskIndex;
+    private bool gravityOn;
 
 
     GameObject[] wormParts;
@@ -32,6 +34,7 @@ public class WormController : MonoBehaviour
     {
         wormMaskIndex = 0;
         shiftOn = false;
+        gravityOn = false;
         wormParts = new GameObject[maxWormParts];
         wormMasks = new GameObject[maxWormMasks];
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -83,6 +86,8 @@ public class WormController : MonoBehaviour
         //wormParts[0].transform.position = position;
         if (shiftOn)
             movement = movement * shiftMultiplier;
+        if (gravityOn)
+            movement = movement + new Vector3(0, gravityValue, 0);
         wormParts[0].GetComponent<Rigidbody2D>().AddForce(movement * MovementSpeed * Time.fixedDeltaTime);
         transform.position = wormParts[0].transform.position;
         for (int i = 1; i < maxWormParts; i++)
@@ -137,5 +142,9 @@ public class WormController : MonoBehaviour
             }
         }
 
-    
+        public void SetGravity(bool enabled, float level)
+    {
+        gravityOn = enabled;
+        gravityValue = level;
+    }
 }

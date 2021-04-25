@@ -38,7 +38,7 @@ public class GrubController : MonoBehaviour
             {
                 isMoving = false;
                 lastTime = Time.time;
-                Debug.Log("Bug not moving");
+                //Debug.Log("Bug not moving");
             }
 
         }
@@ -48,7 +48,7 @@ public class GrubController : MonoBehaviour
             {
                 isMoving = true;
                 GetComponent<Rigidbody2D>().rotation += turnRate * Random.Range(0.7f, 1.0f);
-                Debug.Log("Bug is rotating and moving");
+                //Debug.Log("Bug is rotating and moving");
             }
 
         }

@@ -39,7 +39,7 @@ public class BugController : MonoBehaviour
             {
                 isMoving = false;
                 lastTime = Time.time;
-                Debug.Log("Bug not moving");
+                //Debug.Log("Bug not moving");
             }
 
         }
@@ -49,7 +49,7 @@ public class BugController : MonoBehaviour
             {
                 isMoving = true;
                 GetComponent<Rigidbody2D>().rotation += turnRate;
-                Debug.Log("Bug is rotating and moving");
+                //Debug.Log("Bug is rotating and moving");
             }
 
         }
