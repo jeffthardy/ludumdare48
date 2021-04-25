@@ -19,8 +19,9 @@ public class BugController : MonoBehaviour
     void Start()
     {
 
-        lastTime = Time.time;
-        isMoving = true;
+        lastTime = Time.time + moveTime*Random.Range(0.25f,1.0f);
+        GetComponent<Rigidbody2D>().rotation += turnRate * (Random.Range(1f, 3.1f) / 3);
+        isMoving = false;
     }
 
 
