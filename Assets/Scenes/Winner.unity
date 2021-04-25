@@ -2627,7 +2627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuScene: Menu
-  clip: {fileID: 8300000, guid: 321447e52fae80e489c1ea24d22b22b2, type: 3}
+  clip: {fileID: 8300000, guid: c93b06eb22ce1444ebdbc2f21dc93c0b, type: 3}
 --- !u!4 &1474338745
 Transform:
   m_ObjectHideFlags: 0
