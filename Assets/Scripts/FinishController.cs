@@ -7,20 +7,23 @@ using UnityEngine.SceneManagement;
 public class FinishController : MonoBehaviour
 {
     public string menuScene;
-    public float delay = 5.0f;
+    public AudioClip clip;
 
+    private AudioSource audioSource;
     private float switchTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        switchTime = Time.time + delay;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > switchTime)
+        if(!audioSource.isPlaying)
         {
             SceneManager.LoadScene(menuScene);
         }

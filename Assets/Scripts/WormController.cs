@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WormController : MonoBehaviour
 {
 
+    public string menuScene;
     public float MovementSpeed = 2000;
     public int WormSegments = 3;
     public GameObject WormPartObject;
@@ -134,13 +137,14 @@ public class WormController : MonoBehaviour
                 Debug.Log("You have clicked the quit button!");
     #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
-    #elif UNITY_WEBGL	
+#elif UNITY_WEBGL
+            SceneManager.LoadScene(menuScene);
             //Application.OpenURL(webplayerQuitURL);
-    #else
+#else
             Application.Quit();
-    #endif
-            }
+#endif
         }
+    }
 
         public void SetGravity(bool enabled, float level)
     {
